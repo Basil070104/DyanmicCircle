@@ -24,7 +24,7 @@ public class DynamicCircle implements Directions {
         Robot circle = new Robot(1,1,East,1000);
         World.setVisible(true);
         World.setSize(worldX,worldY);
-        World.setDelay(1);
+        World.setDelay(0);
 
         makeCenter(circle, radius);
         circle.putBeeper();
@@ -112,7 +112,7 @@ public class DynamicCircle implements Directions {
 
     }
     public void makeEndOfRad(Robot robot, int radius){
-        int yOff = (Math.round((radius/4) + 1));
+        int yOff = moveY(radius, radius - 1);
         if (yOff % 2 == 0) {
             yOff = yOff -1;
         }
